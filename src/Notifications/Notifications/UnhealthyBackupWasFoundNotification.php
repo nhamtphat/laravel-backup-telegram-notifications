@@ -1,6 +1,6 @@
 <?php
 
-namespace Hotrush\SpatieBackup\Notifications\Notifications;
+namespace NhamtPhat\SpatieBackup\Notifications\Notifications;
 
 use Spatie\Backup\Notifications\Notifications\UnhealthyBackupWasFoundNotification as BaseNotification;
 use NotificationChannels\Telegram\TelegramMessage;
@@ -11,7 +11,7 @@ class UnhealthyBackupWasFoundNotification extends BaseNotification
     {
         return (new TelegramMessage)
             ->view('laravel-backup-tg-notifications::failed', [
-                'message' => trans('backup::notifications.unhealthy_backup_found_subject', [
+                'message' => '❌ ' . trans('backup::notifications.unhealthy_backup_found_subject', [
                     'application_name' => $this->applicationName(),
                 ]),
                 'exception' => $this->failure()->exception(),

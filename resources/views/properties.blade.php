@@ -1,3 +1,3 @@
 @foreach($properties as $value => $name)
-- {{ $value }}: <i>{{ $name }}</i>
+• {{ $value }}:{!! "\n" !!}<code> {{ $name }}</code>
 @endforeach

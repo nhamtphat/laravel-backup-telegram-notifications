@@ -1,6 +1,6 @@
 <?php
 
-namespace Hotrush\SpatieBackup;
+namespace NhamtPhat\SpatieBackup;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 

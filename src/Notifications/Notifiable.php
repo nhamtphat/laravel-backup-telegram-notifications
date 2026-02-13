@@ -1,6 +1,6 @@
 <?php
 
-namespace Hotrush\SpatieBackup\Notifications;
+namespace NhamtPhat\SpatieBackup\Notifications;
 
 use Spatie\Backup\Notifications\Notifiable as BaseNotifiable;
 

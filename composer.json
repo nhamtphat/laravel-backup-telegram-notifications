@@ -1,11 +1,11 @@
 {
-    "name": "hotrush/laravel-backup-telegram-notifications",
+    "name": "nhamtphat/laravel-backup-telegram-notifications",
     "description": "Telegram notifications for spatie/laravel-backup",
     "license": "MIT",
     "authors": [
         {
-            "name": "hotrush",
-            "email": "johny64@gmail.com"
+            "name": "Phat Nham",
+            "email": "phattannham@gmail.com"
         }
     ],
     "require": {
@@ -15,13 +15,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Hotrush\\SpatieBackup\\": "src"
+            "NhamtPhat\\SpatieBackup\\": "src"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Hotrush\\SpatieBackup\\TelegramNotificationsServiceProvider"
+                "NhamtPhat\\SpatieBackup\\TelegramNotificationsServiceProvider"
             ]
         }
     }

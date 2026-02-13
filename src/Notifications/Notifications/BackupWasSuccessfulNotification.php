@@ -1,6 +1,6 @@
 <?php
 
-namespace Hotrush\SpatieBackup\Notifications\Notifications;
+namespace NhamtPhat\SpatieBackup\Notifications\Notifications;
 
 use Spatie\Backup\Notifications\Notifications\BackupWasSuccessfulNotification as BaseNotification;
 use NotificationChannels\Telegram\TelegramMessage;
@@ -11,7 +11,7 @@ class BackupWasSuccessfulNotification extends BaseNotification
     {
         return (new TelegramMessage)
             ->view('laravel-backup-tg-notifications::successful', [
-                'message' => trans('backup::notifications.backup_successful_body', [
+                'message' => '✅ ' . trans('backup::notifications.backup_successful_subject', [
                     'application_name' => $this->applicationName(),
                     'disk_name' => $this->diskName(),
                 ]),
