@@ -22,18 +22,7 @@ composer require nhamtphat/laravel-backup-telegram-notifications
 
 ## ⚙️ Configuration
 
-### 1. Configure Telegram Bot
-
-Add your Telegram Bot Token to your `config/services.php` file:
-
-```php
-// config/services.php
-'telegram-bot-api' => [
-    'token' => env('TELEGRAM_BOT_TOKEN'),
-],
-```
-
-### 2. Configure Backup Notifications
+### 1. Configure Backup Notifications
 
 In your `config/backup.php` file, update the `notifications` section to use the Telegram channel and this package's notification classes.
 
@@ -62,12 +51,20 @@ use NhamtPhat\SpatieBackup\Notifications\Notifications\UnhealthyBackupWasFoundNo
     'notifiable' => Notifiable::class,
 
     'telegram' => [
-        'channel_id' => env('TELEGRAM_CHAT_ID'),
+        'channel_id' => env('TELEGRAM_BACKUP_CHAT_ID', env('TELEGRAM_CHAT_ID')),
     ],
 ],
 ```
 
-Don't forget to add `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` to your `.env` file.
+Alternatively, you can publish the package config file:
+
+```bash
+php artisan vendor:publish --tag="laravel-backup-telegram-config"
+```
+
+This will create a `config/backup-telegram.php` file where you can manage your Telegram settings. The package will automatically use these values as fallbacks if they are not defined in `config/backup.php`.
+
+Don't forget to add `TELEGRAM_BACKUP_BOT_TOKEN` (or `TELEGRAM_BOT_TOKEN`) and `TELEGRAM_BACKUP_CHAT_ID` (or `TELEGRAM_CHAT_ID`) to your `.env` file.
 
 ## 🛠 Usage
 
