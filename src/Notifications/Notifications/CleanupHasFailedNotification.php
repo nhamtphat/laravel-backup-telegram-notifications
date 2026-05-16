@@ -10,8 +10,9 @@ class CleanupHasFailedNotification extends BaseNotification
     public function toTelegram($notifiable): TelegramMessage
     {
         return (new TelegramMessage)
+            ->token(config('backup-telegram.bot_token'))
             ->view('laravel-backup-tg-notifications::failed', [
-                'message' => '✅ ' . trans('backup::notifications.cleanup_failed_subject', [
+                'message' => '❌ ' . trans('backup::notifications.cleanup_failed_subject', [
                     'application_name' => $this->applicationName(),
                 ]),
                 'exception' => $this->event->exception,

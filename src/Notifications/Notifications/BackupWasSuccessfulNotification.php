@@ -10,6 +10,7 @@ class BackupWasSuccessfulNotification extends BaseNotification
     public function toTelegram($notifiable): TelegramMessage
     {
         return (new TelegramMessage)
+            ->token(config('backup-telegram.bot_token'))
             ->view('laravel-backup-tg-notifications::successful', [
                 'message' => '✅ ' . trans('backup::notifications.backup_successful_subject', [
                     'application_name' => $this->applicationName(),

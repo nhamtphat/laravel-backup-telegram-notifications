@@ -10,6 +10,7 @@ class HealthyBackupWasFoundNotification extends BaseNotification
     public function toTelegram($notifiable): TelegramMessage
     {
         return (new TelegramMessage)
+            ->token(config('backup-telegram.bot_token'))
             ->view('laravel-backup-tg-notifications::successful', [
                 'message' => '✅ ' . trans('backup::notifications.healthy_backup_found_subject', [
                     'application_name' => $this->applicationName(),

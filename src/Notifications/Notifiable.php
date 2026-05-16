@@ -8,6 +8,6 @@ class Notifiable extends BaseNotifiable
 {
     public function routeNotificationForTelegram(): string
     {
-        return config('backup.notifications.telegram.channel_id') ?? config('backup-telegram.chat_id');
+        return config('backup-telegram.chat_id');
     }
 }

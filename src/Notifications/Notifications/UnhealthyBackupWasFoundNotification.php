@@ -10,6 +10,7 @@ class UnhealthyBackupWasFoundNotification extends BaseNotification
     public function toTelegram($notifiable): TelegramMessage
     {
         return (new TelegramMessage)
+            ->token(config('backup-telegram.bot_token'))
             ->view('laravel-backup-tg-notifications::failed', [
                 'message' => '❌ ' . trans('backup::notifications.unhealthy_backup_found_subject', [
                     'application_name' => $this->applicationName(),

@@ -21,9 +21,6 @@ class TelegramNotificationsServiceProvider extends BaseServiceProvider
             ], 'laravel-backup-telegram-config');
         }
 
-        if (!config('services.telegram-bot-api.token')) {
-            config(['services.telegram-bot-api.token' => config('backup-telegram.bot_token')]);
-        }
     }
 
     /**
